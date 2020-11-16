@@ -10,24 +10,26 @@ import Step1 from "./contribute/Step1"
 import Step2 from "./contribute/Step2"
 import Step3 from "./contribute/Step3"
 
+import {
+  Nav
+} from 'react-bootstrap';
+
 const Contribute = () => {
   const route = useRouteMatch();
 
   return (
     <section>
-      <h1>Contribute</h1>
-
-      <ul>
-        <li>
-          <Link to={`${route.url}/1`}>Intro</Link>
-        </li>
-        <li>
-          <Link to={`${route.url}/2`}>Upload</Link>
-        </li>
-        <li>
-          <Link to={`${route.url}/3`}>Finish</Link>
-        </li>
-      </ul>
+      <Nav fill className="justify-content-center">
+        <Nav.Item>
+          <Nav.Link as={Link} to={`${route.url}/1`}>Intro</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={Link} to={`${route.url}/2`}>Upload</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={Link} to={`${route.url}/3`} >Finish</Nav.Link>
+        </Nav.Item>
+      </Nav>
 
       <Switch>
         <Route path={`${route.url}/1`}>

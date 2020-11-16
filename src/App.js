@@ -23,14 +23,14 @@ const App = () => {
     <Router>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Link className="navbar-brand" to="/" >CommunityFaceKinDB</Link>
+          <Navbar.Brand as={Link} to="/" >CommunityFaceKinDB</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Link className="nav-link" role="button" to="/" >Home</Link>
-              <Link className="nav-link" role="button" to="/contribute">Contribute</Link>
-              <Link className="nav-link" role="button" to="/database">Database</Link>
-              <Link className="nav-link" role="button" to="/about">About</Link>
+              <Nav.Link as={Link} to="/" >Home</Nav.Link>
+              <Nav.Link as={Link} to="/contribute/1">Contribute</Nav.Link>
+              <Nav.Link as={Link} to="/database">Database</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
