@@ -10,6 +10,30 @@ object-assign
   http://jedwatson.github.io/classnames
 */
 
+/*!
+ * Cropper.js v1.5.9
+ * https://fengyuanchen.github.io/cropperjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2020-09-10T13:16:26.743Z
+ */
+
+/*! exports provided: default */
+
+/*! no static exports found */
+
+/*! react */
+
+/*!******************************!*\
+        !*** ./src/react-webcam.tsx ***!
+        \******************************/
+
+/*!**************************************************************************************!*\
+        !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
+        \**************************************************************************************/
+
 /** @license React v0.20.1
  * scheduler.production.min.js
  *
