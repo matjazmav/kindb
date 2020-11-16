@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/kindb/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/kindb/static/js/main.8eece2f1.chunk.js",
+    "main.js.map": "/kindb/static/js/main.8eece2f1.chunk.js.map",
+    "runtime-main.js": "/kindb/static/js/runtime-main.bb461ccd.js",
+    "runtime-main.js.map": "/kindb/static/js/runtime-main.bb461ccd.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/kindb/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.6406398c.chunk.js": "/kindb/static/js/2.6406398c.chunk.js",
+    "static/js/2.6406398c.chunk.js.map": "/kindb/static/js/2.6406398c.chunk.js.map",
+    "static/js/3.57f58b18.chunk.js": "/kindb/static/js/3.57f58b18.chunk.js",
+    "static/js/3.57f58b18.chunk.js.map": "/kindb/static/js/3.57f58b18.chunk.js.map",
+    "index.html": "/kindb/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/kindb/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/kindb/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.6406398c.chunk.js.LICENSE.txt": "/kindb/static/js/2.6406398c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb461ccd.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.6406398c.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.8eece2f1.chunk.js"
+  ]
+}
