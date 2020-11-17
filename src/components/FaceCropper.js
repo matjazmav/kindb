@@ -5,13 +5,13 @@ import 'cropperjs/dist/cropper.css';
 import * as faceapi from 'face-api.js';
 import "./faceCropper.css"
 
-const FaceCropper = ({image}) => {
+const FaceCropper = ({image, onCrop}) => {
 
   const cropperRef = React.useRef(null);
 
   const crop = React.useCallback(
     () => {
-      
+      onCrop(cropperRef.current.getCroppedCanvas().toDataURL());
     },
     [cropperRef]
   );

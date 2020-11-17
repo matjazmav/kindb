@@ -45,8 +45,11 @@ const Camera = ({ onCapture }) => {
           }}
           onUserMedia={() => setIsReady(true)}
           ref={webcamRef} />
-        <button onClick={capture}><Icon.Camera /></button>
         <img src={faceOutline} />
+      </div>
+      <div className="cammera-buttons">
+        <button><Icon.X /></button>
+        <button onClick={capture}><Icon.Camera /></button>
       </div>
     </div>
   );

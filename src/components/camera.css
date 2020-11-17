@@ -1,10 +1,10 @@
-.camera {
-  position: relative;
-}
-
 .camera .camera-loader {
   text-align: center;
   font-size: 30px;
+}
+
+.camera .camera-view {
+  position: relative;
 }
 
 .camera .camera-view video {
@@ -12,15 +12,22 @@
   margin: auto;
 }
 
-.camera .camera-view button {
-  display: inline-block;
+.camera .cammera-buttons {
   position: absolute;
-  bottom: 0;
+  display: flex;
   left: 0;
   right: 0;
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
+  top: 0;
+  bottom: 0;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera .cammera-buttons button {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
   opacity: 0.7;
   margin: 10px auto;
   font-weight: bold;
@@ -31,7 +38,7 @@
 .camera .camera-view img {
   display: inline-block;
   position: absolute;
-  bottom: 70px;
+  bottom: 10%;
   left: 0;
   right: 0;
   margin: auto;

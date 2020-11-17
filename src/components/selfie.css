@@ -1,13 +1,30 @@
-.selfie-cropper {
-  position: relative;
+.selfie {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.selfie-cropper .face-cropper * {
+  z-index: 100;
 }
 
 .selfie-cropper .selfie-cropper-buttons {
   position: absolute;
-  top: 0;
+  display: flex;
   left: 0;
   right: 0;
-  text-align: center;
+  top: 0;
+  bottom: 0;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .selfie-cropper .selfie-cropper-buttons button {
@@ -20,4 +37,5 @@
   font-weight: bold;
   font-size: larger;
   line-height: 20px;
+  z-index: 200;
 }
