@@ -1,10 +1,11 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
+import { Router, Link } from "@reach/router"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -20,7 +21,7 @@ import About from "./pages/About"
 
 const App = () => {
   return (
-    <Router>
+    <section>
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/" >CommunityFaceKinDB</Navbar.Brand>
@@ -28,32 +29,42 @@ const App = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link as={Link} to="/" >Home</Nav.Link>
-              <Nav.Link as={Link} to="/contribute/1">Contribute</Nav.Link>
-              <Nav.Link as={Link} to="/database">Database</Nav.Link>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="contribute">Contribute</Nav.Link>
+              <Nav.Link as={Link} to="database">Database</Nav.Link>
+              <Nav.Link as={Link} to="about">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       <Container>
-        <Switch>
-          <Route path="/contribute">
+        <Router>
+          <Home path="/"/>
+          <Contribute path="contribute/*" />
+          <Database path="database" />
+          <About path="about" />
+          {/* <NotFound default /> */}
+        </Router>
+
+        {/* <Switch>
+          <Route strict path="/contribute">
             <Contribute />
           </Route>
-          <Route path="/database">
+          <Route exact path="/database">
             <Database />
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
-        </Switch>
+        </Switch> */}
       </Container>
-    </Router>
+    </section>
   );
 };
+
+const NotFound = () => (<h1>404</h1>);
 
 export default App;

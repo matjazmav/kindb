@@ -1,10 +1,11 @@
 import React from "react";
-import {
-  useRouteMatch,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   useRouteMatch,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
+import { Router, Link } from "@reach/router";
 
 import Step1 from "./contribute/Step1"
 import Step2 from "./contribute/Step2"
@@ -15,33 +16,39 @@ import {
 } from 'react-bootstrap';
 
 const Contribute = () => {
-  const route = useRouteMatch();
+  // const route = useRouteMatch();
 
   return (
     <section>
       <Nav fill className="justify-content-center">
         <Nav.Item>
-          <Nav.Link as={Link} to={`${route.url}/1`}>Intro</Nav.Link>
+          <Nav.Link as={Link} to="1">Intro</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to={`${route.url}/2`}>Upload</Nav.Link>
+          <Nav.Link as={Link} to="2">Upload</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to={`${route.url}/3`} >Finish</Nav.Link>
+          <Nav.Link as={Link} to="3" >Finish</Nav.Link>
         </Nav.Item>
       </Nav>
 
-      <Switch>
-        <Route path={`${route.url}/1`}>
+      <Router>
+        <Step1 path="1" />
+        <Step2 path="2" />
+        <Step3 path="3" />
+      </Router>
+
+      {/* <Switch>
+        <Route exact path={`${route.url}/1`}>
           <Step1 />
         </Route>
-        <Route path={`${route.url}/2`}>
+        <Route exact path={`${route.url}/2`}>
           <Step2 />
         </Route>
-        <Route path={`${route.url}/3`}>
+        <Route exact path={`${route.url}/3`}>
           <Step3 />
         </Route>
-      </Switch>
+      </Switch> */}
 
     </section>
   );
