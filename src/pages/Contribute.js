@@ -1,10 +1,4 @@
 import React from "react";
-// import {
-//   useRouteMatch,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
 import { Router, Link } from "@reach/router";
 
 import Step1 from "./contribute/Step1"
@@ -16,7 +10,6 @@ import {
 } from 'react-bootstrap';
 
 const Contribute = () => {
-  // const route = useRouteMatch();
 
   return (
     <section>
@@ -37,18 +30,6 @@ const Contribute = () => {
         <Step2 path="2" />
         <Step3 path="3" />
       </Router>
-
-      {/* <Switch>
-        <Route exact path={`${route.url}/1`}>
-          <Step1 />
-        </Route>
-        <Route exact path={`${route.url}/2`}>
-          <Step2 />
-        </Route>
-        <Route exact path={`${route.url}/3`}>
-          <Step3 />
-        </Route>
-      </Switch> */}
 
     </section>
   );

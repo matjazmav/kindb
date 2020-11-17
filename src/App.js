@@ -1,10 +1,4 @@
 import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
 import { Router, Link } from "@reach/router"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,10 +25,10 @@ const App = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/" >Home</Nav.Link>
-              <Nav.Link as={Link} to="contribute">Contribute</Nav.Link>
-              <Nav.Link as={Link} to="database">Database</Nav.Link>
-              <Nav.Link as={Link} to="about">About</Nav.Link>
+              <Nav.Link as={Link} to={`${baseUrl}/`} >Home</Nav.Link>
+              <Nav.Link as={Link} to={`${baseUrl}/contribute`}>Contribute</Nav.Link>
+              <Nav.Link as={Link} to={`${baseUrl}/database`}>Database</Nav.Link>
+              <Nav.Link as={Link} to={`${baseUrl}/about`}>About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
