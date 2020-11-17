@@ -19,7 +19,10 @@ import Contribute from "./pages/Contribute"
 import Database from "./pages/Database"
 import About from "./pages/About"
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const App = () => {
+
   return (
     <section>
       <Navbar bg="light" expand="lg">
@@ -39,10 +42,10 @@ const App = () => {
 
       <Container>
         <Router>
-          <Home path="/"/>
-          <Contribute path="contribute/*" />
-          <Database path="database" />
-          <About path="about" />
+          <Home path={`${baseUrl}/`}/>
+          <Contribute path={`${baseUrl}/contribute/*`} />
+          <Database path={`${baseUrl}/database`} />
+          <About path={`${baseUrl}/about`} />
           <NotFound default />
         </Router>
       </Container>
