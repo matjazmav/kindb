@@ -21,7 +21,7 @@ const App = () => {
     <section>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/" >CommunityFaceKinDB</Navbar.Brand>
+          <Navbar.Brand as={Link} to={`${baseUrl}/`} >CommunityFaceKinDB</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
