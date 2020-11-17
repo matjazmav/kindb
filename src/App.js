@@ -43,23 +43,8 @@ const App = () => {
           <Contribute path="contribute/*" />
           <Database path="database" />
           <About path="about" />
-          {/* <NotFound default /> */}
+          <NotFound default />
         </Router>
-
-        {/* <Switch>
-          <Route strict path="/contribute">
-            <Contribute />
-          </Route>
-          <Route exact path="/database">
-            <Database />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch> */}
       </Container>
     </section>
   );

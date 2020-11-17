@@ -1,0 +1,39 @@
+.camera {
+  position: relative;
+}
+
+.camera .camera-loader {
+  text-align: center;
+  font-size: 30px;
+}
+
+.camera .camera-view video {
+  display: block;
+  margin: auto;
+}
+
+.camera .camera-view button {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  opacity: 0.4;
+  margin: 10px auto;
+}
+
+.camera .camera-view img {
+  display: inline-block;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 80%;
+  width: 80%;
+  border-radius: 50px;
+  opacity: 0.4;
+}

@@ -1,10 +1,11 @@
-import Camera from "../../components/Camera"
+import React from "react";
+import Selfie from "../../components/Selfie"
 
 const Step2 = () => {
   return (
     <section>
       <h1>Step 2</h1>
-      <Camera />
+      <Selfie />
     </section>
   );
 };
