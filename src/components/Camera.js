@@ -67,10 +67,12 @@ const Camera = () => {
 
   React.useEffect(() => {
     if(!detection) return;
+    const { width, height } = cropperRef.current.getImageData();
     cropperRef.current.setCropBoxData({
-      ...detection,
-      height: detection.height*1.5,
-      top: Math.max(0, detection.top-(detection.height*0.5))
+      top: Math.max(0, detection.height - (detection.height * 0.6)),
+      height: Math.min(height, detection.height * 1.6),
+      left: Math.max(0, detection.left - (detection.width * 0.25)),
+      width: Math.min(width, detection.width * 1.5),
     });
   }, [cropperRef, detection]);
 
@@ -79,7 +81,7 @@ const Camera = () => {
       <Webcam
         audio={false}
         mirrored={true}
-        screenshotFormat="image/jpeg"
+        screenshotFormat="image/png"
         videoConstraints={{
           facingMode: "user"
         }}
@@ -88,7 +90,7 @@ const Camera = () => {
       <img src={rawImageSrc} id="rawImageSrc"/>
       <Cropper
                 src={rawImageSrc}
-                style={{height: 400, width: '100%'}}
+                style={{height: 480, width: 640}}
                 initialAspectRatio={1}
                 guides={false}
                 crop={crop}
