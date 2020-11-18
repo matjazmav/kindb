@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/kindb/static/css/main.fc9259c2.chunk.css",
-    "main.js": "/kindb/static/js/main.64c1b699.chunk.js",
-    "main.js.map": "/kindb/static/js/main.64c1b699.chunk.js.map",
-    "runtime-main.js": "/kindb/static/js/runtime-main.cb752727.js",
-    "runtime-main.js.map": "/kindb/static/js/runtime-main.cb752727.js.map",
-    "static/css/2.e53d856f.chunk.css": "/kindb/static/css/2.e53d856f.chunk.css",
-    "static/js/2.d6dff48b.chunk.js": "/kindb/static/js/2.d6dff48b.chunk.js",
-    "static/js/2.d6dff48b.chunk.js.map": "/kindb/static/js/2.d6dff48b.chunk.js.map",
-    "static/js/3.1f141465.chunk.js": "/kindb/static/js/3.1f141465.chunk.js",
-    "static/js/3.1f141465.chunk.js.map": "/kindb/static/js/3.1f141465.chunk.js.map",
+    "main.js": "/kindb/static/js/main.aa70d88a.chunk.js",
+    "main.js.map": "/kindb/static/js/main.aa70d88a.chunk.js.map",
+    "runtime-main.js": "/kindb/static/js/runtime-main.7fbdc716.js",
+    "runtime-main.js.map": "/kindb/static/js/runtime-main.7fbdc716.js.map",
+    "static/css/2.4e177df2.chunk.css": "/kindb/static/css/2.4e177df2.chunk.css",
+    "static/js/2.25764a1a.chunk.js": "/kindb/static/js/2.25764a1a.chunk.js",
+    "static/js/2.25764a1a.chunk.js.map": "/kindb/static/js/2.25764a1a.chunk.js.map",
+    "static/js/3.89c5aa3a.chunk.js": "/kindb/static/js/3.89c5aa3a.chunk.js",
+    "static/js/3.89c5aa3a.chunk.js.map": "/kindb/static/js/3.89c5aa3a.chunk.js.map",
     "index.html": "/kindb/index.html",
-    "static/css/2.e53d856f.chunk.css.map": "/kindb/static/css/2.e53d856f.chunk.css.map",
+    "static/css/2.4e177df2.chunk.css.map": "/kindb/static/css/2.4e177df2.chunk.css.map",
     "static/css/main.fc9259c2.chunk.css.map": "/kindb/static/css/main.fc9259c2.chunk.css.map",
-    "static/js/2.d6dff48b.chunk.js.LICENSE.txt": "/kindb/static/js/2.d6dff48b.chunk.js.LICENSE.txt",
+    "static/js/2.25764a1a.chunk.js.LICENSE.txt": "/kindb/static/js/2.25764a1a.chunk.js.LICENSE.txt",
     "static/media/UploadIcon.svg": "/kindb/static/media/UploadIcon.469126df.svg",
     "static/media/face-outline.d8b16a1f.svg": "/kindb/static/media/face-outline.d8b16a1f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cb752727.js",
-    "static/css/2.e53d856f.chunk.css",
-    "static/js/2.d6dff48b.chunk.js",
+    "static/js/runtime-main.7fbdc716.js",
+    "static/css/2.4e177df2.chunk.css",
+    "static/js/2.25764a1a.chunk.js",
     "static/css/main.fc9259c2.chunk.css",
-    "static/js/main.64c1b699.chunk.js"
+    "static/js/main.aa70d88a.chunk.js"
   ]
 }
