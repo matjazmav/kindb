@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Link } from "@reach/router";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import Step1 from "./contribute/Step1"
 import Step2 from "./contribute/Step2"
@@ -10,26 +10,33 @@ import {
 } from 'react-bootstrap';
 
 const Contribute = () => {
+  const match = useRouteMatch();
 
   return (
     <section>
       <Nav fill className="justify-content-center">
         <Nav.Item>
-          <Nav.Link as={Link} to="1">Intro</Nav.Link>
+          <Nav.Link as={Link} to={`${match.url}/1`}>Intro</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to="2">Upload</Nav.Link>
+          <Nav.Link as={Link} to={`${match.url}/2`}>Upload</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to="3" >Finish</Nav.Link>
+          <Nav.Link as={Link} to={`${match.url}/3`}>Finish</Nav.Link>
         </Nav.Item>
       </Nav>
 
-      <Router>
-        <Step1 path="1" />
-        <Step2 path="2" />
-        <Step3 path="3" />
-      </Router>
+      <Switch>
+        <Route path={`${match.url}/1`}>
+          <Step1 />
+        </Route>
+        <Route path={`${match.url}/2`}>
+          <Step2 />
+        </Route>
+        <Route path={`${match.url}/3`}>
+          <Step3 />
+        </Route>
+      </Switch>
 
     </section>
   );

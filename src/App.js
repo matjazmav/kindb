@@ -1,5 +1,10 @@
 import React from "react";
-import { Router, Link } from "@reach/router"
+import { 
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -18,32 +23,42 @@ const baseUrl = process.env.REACT_APP_BASE_URL;
 const App = () => {
 
   return (
-    <section>
+    <Router>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to={`${baseUrl}/`} >CommunityFaceKinDB</Navbar.Brand>
+          <Navbar.Brand as={Link} to={`/`} >CommunityFaceKinDB</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to={`${baseUrl}/`} >Home</Nav.Link>
-              <Nav.Link as={Link} to={`${baseUrl}/contribute`}>Contribute</Nav.Link>
-              <Nav.Link as={Link} to={`${baseUrl}/database`}>Database</Nav.Link>
-              <Nav.Link as={Link} to={`${baseUrl}/about`}>About</Nav.Link>
+              <Nav.Link as={Link} to={`/`} >Home</Nav.Link>
+              <Nav.Link as={Link} to={`/contribute`}>Contribute</Nav.Link>
+              <Nav.Link as={Link} to={`/database`}>Database</Nav.Link>
+              <Nav.Link as={Link} to={`/about`}>About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       <Container>
-        <Router>
-          <Home path={`${baseUrl}/`}/>
-          <Contribute path={`${baseUrl}/contribute/*`} />
-          <Database path={`${baseUrl}/database`} />
-          <About path={`${baseUrl}/about`} />
-          <NotFound default />
-        </Router>
+        <Switch>
+          <Route exact path={`/`}>
+            <Home />
+          </Route>
+          <Route path={`/contribute`}>
+            <Contribute />
+          </Route>
+          <Route path={`/database`}>
+            <Database />
+          </Route>
+          <Route path={`/about`} >
+            <About />
+          </Route>
+          <Route>
+            <NotFound path="*" />
+          </Route>
+        </Switch>
       </Container>
-    </section>
+    </Router>
   );
 };
 
