@@ -1,31 +1,29 @@
 import Webcam from "react-webcam";
 import React from 'react';
-import "./camera.css";
+import "./Camera.css";
 import faceOutline from "../resources/face-outline.svg"
 import * as Icon from 'react-bootstrap-icons';
 import md5 from "md5";
+import * as Utils from "../utils";
 
 const Camera = ({ onCapture }) => {
 
   const [isReady, setIsReady] = React.useState(false);
   const webcamRef = React.useRef(null);
   const capture = React.useCallback(
-    () => {
+    async () => {
       console.log("Capture event...")
       const src = webcamRef.current.getScreenshot();
-      const image = new Image();
-      image.onload = () => { 
-        console.log(`Image captured (${image.width}x${image.height}).`)
-        onCapture({
-          src: src,
-          meta: {
-            hash: md5(src),
-            width: image.width,
-            height: image.height,
-          }
-        });
-      }
-      image.src = src;
+      const image = await Utils.base64ToImage(src);
+      console.log(`Image captured (${image.width}x${image.height}).`)
+      onCapture({
+        src: src,
+        meta: {
+          hash: md5(src),
+          width: image.width,
+          height: image.height,
+        }
+      });
     },
     [webcamRef]
   );

@@ -3,28 +3,20 @@ import md5 from "md5";
 import FaceCropper from "./FaceCropper"
 import * as Icon from "react-bootstrap-icons"
 import "./SelfieUpload.css"
+import {
+  Button
+} from 'react-bootstrap';
+import * as Utils from "../utils";
 
 const SelfieUpload =  ({onUpload}) => {
-  const rawImageRef = React.useRef();
+  const fileInputRef = React.useRef();
   const [rawImage, setRawImage] = React.useState(null);
   const [croppedImage, setCroppedImage] = React.useState(null);
 
   const imageUploadedHandler = async (event) => {
     const file = event.target.files[0];
-    const toBase64 = file => new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-    const toImage = base64 => new Promise((resolve, reject) => {
-      const image = new Image();
-      image.onload = () => resolve(image);
-      image.onerror = error => reject(error);
-      image.src = base64;
-    });
-    const src = await toBase64(file);
-    const img = await toImage(src);
+    const src = await Utils.fileToBase64(file);
+    const img = await Utils.base64ToImage(src);
     setRawImage({
       src: src,
       meta: {
@@ -46,8 +38,10 @@ const SelfieUpload =  ({onUpload}) => {
 
   return (
     <div className="selfie-upload">
-      { !rawImage && 
-        <input type="file" ref={rawImageRef} onChange={imageUploadedHandler} /> }
+      { !rawImage && <div>
+        <Button variant="outline-primary" onClick={() => fileInputRef.current.click()}>Choose File</Button>
+        <input type="file" ref={fileInputRef} onChange={imageUploadedHandler} style={{display: "none"}} /> 
+      </div> }
       { rawImage &&
         <div className="selfie-cropper">
           <FaceCropper image={rawImage} onCrop={setCroppedImage} />
