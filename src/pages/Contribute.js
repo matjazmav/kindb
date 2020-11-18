@@ -7,7 +7,6 @@ import Step2 from "./contribute/Step2";
 import Step3 from "./contribute/Step3";
 
 import {
-  Nav,
   Button
 } from 'react-bootstrap';
 
