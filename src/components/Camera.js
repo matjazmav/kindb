@@ -3,6 +3,7 @@ import React from 'react';
 import "./camera.css";
 import faceOutline from "../resources/face-outline.svg"
 import * as Icon from 'react-bootstrap-icons';
+import md5 from "md5";
 
 const Camera = ({ onCapture }) => {
 
@@ -10,19 +11,21 @@ const Camera = ({ onCapture }) => {
   const webcamRef = React.useRef(null);
   const capture = React.useCallback(
     () => {
-      const imgSrc = webcamRef.current.getScreenshot();
+      console.log("Capture event...")
+      const src = webcamRef.current.getScreenshot();
       const image = new Image();
       image.onload = () => { 
         console.log(`Image captured (${image.width}x${image.height}).`)
         onCapture({
-          src: imgSrc,
+          src: src,
           meta: {
+            hash: md5(src),
             width: image.width,
             height: image.height,
           }
         });
       }
-      image.src = imgSrc;
+      image.src = src;
     },
     [webcamRef]
   );

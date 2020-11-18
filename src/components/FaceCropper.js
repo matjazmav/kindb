@@ -1,34 +1,62 @@
-import Webcam from "react-webcam";
 import React from 'react';
 import Cropper from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
-import * as faceapi from 'face-api.js';
-import "./faceCropper.css"
+import "./faceCropper.css";
+import md5 from "md5";
 
 const FaceCropper = ({image, onCrop}) => {
 
   const cropperRef = React.useRef(null);
+  const [isInitialized, setIsInitialized] = React.useState(false);
 
-  const crop = React.useCallback(
+  const cropHandler = () => {
+    console.log("Initial crop event...");
+    cropHandlerHelper();
+    cropperRef.current.removeEventListener('crop', cropHandler);
+  };
+
+  React.useEffect(() => {
+    cropperRef.current.addEventListener('crop', cropHandler);
+    return () => {
+      cropperRef.current.removeEventListener('crop', cropHandler);
+    }
+  }, []);
+
+  const cropendHandler = React.useCallback(
     () => {
-      onCrop(cropperRef.current.getCroppedCanvas().toDataURL());
+      cropHandlerHelper();
     },
     [cropperRef]
   );
 
-  const onCropperInit = (cropper) => {
-    cropperRef.current = cropper;
-  };
+  const cropHandlerHelper = () => {
+    console.log("Cropend event...");
+    const imageElement = cropperRef?.current;
+    const cropper = imageElement?.cropper;
+    const { width, height } = cropper.getCropBoxData();
+    const src = cropper.getCroppedCanvas().toDataURL();
+    console.log(`Cropped image (${width}x${height}).`)
+    onCrop({
+      src: src,
+      meta: {
+        hash: md5(src),
+        width: width,
+        height: height,
+      }
+    });
+    setIsInitialized(true);
+  }
 
   return (
     <div className="face-cropper">
       <Cropper
                 src={image.src}
-                style={{height: image.meta.height, width: image.meta.width}}
                 initialAspectRatio={1}
                 guides={false}
-                crop={crop}
-                onInitialized={onCropperInit}
+                autoCrop={true}
+                crop={cropHandler}
+                cropend={cropendHandler}
+                ref={cropperRef}
                 dragMode="crop"
                 movable={false}
                 rotatable={false}
