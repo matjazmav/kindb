@@ -1,6 +1,6 @@
 const Step1 = () => {
   return (
-    <section>
+    <section className="text-justify">
       <h2 className="text-center">Intro</h2>
       <p>
         One of the critical steps in <b>machine learning</b> / <b>artificial intelligence</b> is obtaining large and qualitative dataset.
