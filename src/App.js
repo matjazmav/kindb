@@ -26,14 +26,14 @@ const App = () => {
     <Router>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to={`/`} >CommunityFaceKinDB</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/" >CommunityFaceKinDB</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to={`/`} >Home</Nav.Link>
-              <Nav.Link as={Link} to={`/contribute`}>Contribute</Nav.Link>
-              <Nav.Link as={Link} to={`/database`}>Database</Nav.Link>
-              <Nav.Link as={Link} to={`/about`}>About</Nav.Link>
+              <Nav.Link as={Link} to="/" >Home</Nav.Link>
+              <Nav.Link as={Link} to="/contribute">Contribute</Nav.Link>
+              <Nav.Link as={Link} to="/database">Database</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -41,16 +41,16 @@ const App = () => {
 
       <Container>
         <Switch>
-          <Route exact path={`/`}>
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path={`/contribute`}>
+          <Route exact path="/contribute">
             <Contribute />
           </Route>
-          <Route path={`/database`}>
+          <Route exact path="/database">
             <Database />
           </Route>
-          <Route path={`/about`} >
+          <Route exact path="/about" >
             <About />
           </Route>
           <Route>

@@ -8,7 +8,7 @@ import "./step2.css";
 const Step2 = () => {
   return (
     <section>
-      <h1>Step 2</h1>
+      <h2 className="text-center">Upload</h2>
       <PersonRow type="Father" />
       <PersonRow type="Mother" />
       <PersonRow type="Son" index={1} />

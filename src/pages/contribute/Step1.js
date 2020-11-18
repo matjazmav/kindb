@@ -1,7 +1,7 @@
 const Step1 = () => {
   return (
     <section>
-      <h1>Step 1</h1>
+      <h2 className="text-center">Intro</h2>
       <p>
         Zakaj je ta anketa,
         Kratka navodila,
