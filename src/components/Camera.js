@@ -42,6 +42,8 @@ const Camera = ({ onCapture, onBack }) => {
             screenshotFormat="image/png"
             videoConstraints={{
               facingMode: "user",
+              width: { ideal: 4096 },
+              height: { ideal: 2160 }
             }}
             onUserMedia={() => setIsReady(true)}
             ref={webcamRef}
