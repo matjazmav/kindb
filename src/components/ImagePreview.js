@@ -26,7 +26,12 @@ const ImagePreview = ({ image }) => {
       />
       { isPreviewOpened &&
         <Activity isVisible={true}>
-          <img className="full-image" src={image.src} alt="Image Preview" onClick={closePreviewHandler}/>
+          <div className="full-image">
+            <img src={image.src} alt="Image Preview" onClick={closePreviewHandler}/>
+            <div className="meta">
+              <div>{image.meta.width} x {image.meta.height}</div>
+            </div>
+          </div>
           <Activity.BackButton onClick={closePreviewHandler}><Icon.X /></Activity.BackButton>
         </Activity>
       }

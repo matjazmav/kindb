@@ -15,8 +15,17 @@
     cursor: zoom-in;
   }
 
-  img.full-image {
-    z-index: 1;
+  .full-image {
+    position: relative;
+    z-index: 100;
     cursor: zoom-out;
+
+    > .meta {
+      color: yellow;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 5px;
+    }
   }
 }
