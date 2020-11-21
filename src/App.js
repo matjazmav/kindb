@@ -18,13 +18,11 @@ import Contribute from "./pages/Contribute"
 import Database from "./pages/Database"
 import About from "./pages/About"
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
-
 const App = () => {
 
   return (
     <Router>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" collapseOnSelect>
         <Container>
           <Navbar.Brand as={Link} to="/" >CommunityFaceKinDB</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
