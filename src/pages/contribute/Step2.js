@@ -1,6 +1,5 @@
 import React from "react";
 import PersonImages from "../../components/PersonImages";
-import "./step2.css";
 
 const Step2 = () => {
   return (

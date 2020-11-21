@@ -1,5 +1,5 @@
 import React from "react";
-import md5 from "md5";
+import * as Icon from "react-bootstrap-icons";
 import Cropper from "./Cropper";
 import Camera from "./Camera";
 import {
@@ -39,7 +39,7 @@ const SelfieCaptureButton =  ({onSelfie}) => {
 
   return (
     <span className="selfie-capture-button">
-      <Button onClick={onImageCaptureRequested}>Capture</Button>
+      <Button onClick={onImageCaptureRequested} size="sm" variant="outline-primary"><Icon.Camera /></Button>
       { mode === "camera" && 
         <Camera onCapture={onCaptureHandler} onBack={onBackHandler} />
       }

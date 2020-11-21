@@ -1,6 +1,8 @@
 import React from "react";
 import SelfieUploadButton from "./SelfieUploadButton";
 import SelfieCaptureButton from "./SelfieCaptureButton";
+import ImagePreview from "./ImagePreview";
+import "./PersonImages.scss";
 
 const PersonImages = ({type, index}) => {
   const [images, setImages] = React.useState([]);
@@ -10,25 +12,22 @@ const PersonImages = ({type, index}) => {
   };
 
   const imageElements = images
-    .map(image => <div
-      key={image.meta.hash}
-      data-image-hash={image.meta.hash}
-      style={{
-        backgroundImage: `url("${image.src}")`
-      }}
-      className="image-preview" />);
+    .map(image => <ImagePreview key={image.meta.hash} image={image} />);
 
   return (
-    <div>
-      <div>
+    <div className="person-images">
+      <div className="type">
         <span>{type}</span>
-        <span>#{index}</span>
+        { index && <span> #{index}</span> }
       </div>
-      <div>{imageElements}</div>
-      <div>
-        <SelfieUploadButton onSelfie={onSelfieHandler} />
-        <SelfieCaptureButton onSelfie={onSelfieHandler} />
+
+      <div className="image-collection">{imageElements}</div>
+
+      <div className="controls">
+        <SelfieUploadButton onSelfie={onSelfieHandler} style={{ "margin": "10px" }} />
+        <SelfieCaptureButton onSelfie={onSelfieHandler} style={{ "margin": "10px" }} />
       </div>
+
     </div>
   );
 };

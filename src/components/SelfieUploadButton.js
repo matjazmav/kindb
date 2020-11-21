@@ -1,6 +1,7 @@
 import React from "react";
 import md5 from "md5";
 import Cropper from "./Cropper";
+import * as Icon from "react-bootstrap-icons";
 import {
   Button
 } from 'react-bootstrap';
@@ -44,7 +45,7 @@ const SelfieUploadButton =  ({onSelfie}) => {
 
   return (
     <span className="selfie-upload-button">
-      <Button onClick={onImageUploadRequested}>Upload</Button>
+      <Button onClick={onImageUploadRequested} size="sm" variant="outline-primary"><Icon.Upload /></Button>
       <input 
         type="file"
         accept="image/png, image/jpeg"
