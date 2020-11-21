@@ -13,18 +13,13 @@ const Step1 = () => {
 
         While some similar dataset already exists, the <b>quality</b> of images is <b>poor</b>.
       </p>
-      <p>
-        Properties of high quality image are:
-        <ul>
-          <li>The image contain <b>only single face</b></li>
-          <li>Resolution of the facial area is big as possible</li>
-          <li>Face is possioned directly to the camera</li>
-          <li>Whole face is visible</li>
-        </ul>
-      </p>
-      <div>
-
-      </div>
+      Properties of high quality image are:
+      <ul>
+        <li>The image contain <b>only single face</b></li>
+        <li>Resolution of the facial area is big as possible</li>
+        <li>Face is possioned directly to the camera</li>
+        <li>Whole face is visible</li>
+      </ul>
     </section>
   );
 };

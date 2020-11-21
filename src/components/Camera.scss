@@ -1,0 +1,16 @@
+.camera {
+  .camera-wrapper {
+    position: relative;
+
+    > img.face-outline {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      max-height: 95%;
+      max-width: 95%;
+    }
+  }
+}

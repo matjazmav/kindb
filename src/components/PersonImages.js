@@ -1,22 +1,13 @@
 import React from "react";
-import SelfieCapture from "./SelfieCapture";
-import SelfieUpload from "./SelfieUpload";
+import SelfieUploadButton from "./SelfieUploadButton";
+import SelfieCaptureButton from "./SelfieCaptureButton";
 
 const PersonImages = ({type, index}) => {
   const [images, setImages] = React.useState([]);
-  const [isCaptureMode, setIsCaptureMode] = React.useState(false);
-  const [isUploadMode, setIsUploadMode] = React.useState(false);
 
-  const captureBtnClkHandler = () => setIsCaptureMode(true);
-  const uploadBtnClkHandler = () => setIsUploadMode(true);
-  const captureHandler = (img) => {
-    setIsCaptureMode(false);
+  const onSelfieHandler = (img) => {
     setImages([...images, img]);
-  }
-  const uploadHandler = (img) => {
-    setIsUploadMode(false);
-    setImages([...images, img]);
-  }
+  };
 
   const imageElements = images
     .map(image => <div
@@ -29,16 +20,14 @@ const PersonImages = ({type, index}) => {
 
   return (
     <div>
-      { isCaptureMode && <SelfieCapture onCapture={captureHandler} />  }
-      { isUploadMode && <SelfieUpload onUpload={uploadHandler} />  }
       <div>
         <span>{type}</span>
         <span>#{index}</span>
       </div>
       <div>{imageElements}</div>
       <div>
-        <button onClick={uploadBtnClkHandler}>Upload</button>
-        <button onClick={captureBtnClkHandler}>Capture</button>
+        <SelfieUploadButton onSelfie={onSelfieHandler} />
+        <SelfieCaptureButton onSelfie={onSelfieHandler} />
       </div>
     </div>
   );

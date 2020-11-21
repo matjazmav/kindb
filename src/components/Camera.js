@@ -1,16 +1,16 @@
 import Webcam from "react-webcam";
 import React from 'react';
-import "./Camera.css";
+import Activity from "./Activity";
+import "./Camera.scss";
 import faceOutline from "../resources/face-outline.svg"
 import * as Icon from 'react-bootstrap-icons';
 import md5 from "md5";
 import * as Utils from "../utils";
 
-const Camera = ({ onCapture }) => {
-
+const Camera = ({ onCapture, onBack }) => {
   const [isReady, setIsReady] = React.useState(false);
   const webcamRef = React.useRef(null);
-  const capture = React.useCallback(
+  const onCaptureHandler = React.useCallback(
     async () => {
       console.log("Capture event...")
       const src = webcamRef.current.getScreenshot();
@@ -28,30 +28,31 @@ const Camera = ({ onCapture }) => {
     [webcamRef]
   );
   
+  const onBackHandler = () => {
+    onBack();
+  };
+
   return (
     <div className="camera">
-      <div className="camera-loader" style={{display: !isReady ? "block" : "none"}}>
-        <Icon.HourglassSplit  /><br/>
-        <span>Opening camera...</span>
-      </div>
-      <div className="camera-view" style={{display: isReady ? "block" : "none"}}>
-        <Webcam
-          audio={false}
-          mirrored={true}
-          screenshotFormat="image/png"
-          videoConstraints={{
-            facingMode: "user",
-            // width: { ideal: 4096 },
-            // height: { ideal: 2160 }
-          }}
-          onUserMedia={() => setIsReady(true)}
-          ref={webcamRef} />
-        <img src={faceOutline} />
-      </div>
-      <div className="cammera-buttons">
-        <button><Icon.X /></button>
-        <button onClick={capture}><Icon.Camera /></button>
-      </div>
+      <Activity isVisible={true}>
+        <div className="camera-wrapper">
+          <Webcam
+            audio={false}
+            mirrored={true}
+            screenshotFormat="image/png"
+            videoConstraints={{
+              facingMode: "user",
+            }}
+            onUserMedia={() => setIsReady(true)}
+            ref={webcamRef}
+          />
+          <img className="face-outline" src={faceOutline} />
+        </div>
+        { isReady && 
+          <Activity.OkButton onClick={onCaptureHandler}><Icon.Camera /></Activity.OkButton>
+        }
+        <Activity.BackButton onClick={onBackHandler}><Icon.X /></Activity.BackButton>
+      </Activity>
     </div>
   );
 }
