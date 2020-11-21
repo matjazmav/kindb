@@ -25,7 +25,7 @@ const Camera = ({ onCapture, onBack }) => {
         }
       });
     },
-    [webcamRef]
+    [webcamRef, onCapture]
   );
   
   const onBackHandler = () => {
@@ -46,7 +46,7 @@ const Camera = ({ onCapture, onBack }) => {
             onUserMedia={() => setIsReady(true)}
             ref={webcamRef}
           />
-          <img className="face-outline" src={faceOutline} />
+          <img className="face-outline" src={faceOutline} alt="Face Overlay" />
         </div>
         { isReady && 
           <Activity.OkButton onClick={onCaptureHandler}><Icon.Camera /></Activity.OkButton>

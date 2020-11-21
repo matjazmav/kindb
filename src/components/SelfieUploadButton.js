@@ -9,10 +9,8 @@ import * as Utils from "../utils";
 const SelfieUploadButton =  ({onSelfie}) => {
   const fileInputRef = React.useRef();
   const [rawImage, setRawImage] = React.useState(null);
-  const [isCropperMode, setIsCropperMode] = React.useState(false);
 
   const onImageUploadRequested = () => {
-    setIsCropperMode(true);
     fileInputRef.current.click();
   }
 
@@ -41,21 +39,7 @@ const SelfieUploadButton =  ({onSelfie}) => {
 
   const cleanup = () => {
     fileInputRef.current.value = null;
-    setIsCropperMode(false);
     setRawImage(null);
-  };
-
-  const setOnBodyFocusHandler = () => {
-    document.body.onfocus = onBodyFocusHandler;
-  };
-
-  const onBodyFocusHandler = () => {
-    document.body.onfocus = null;
-    // HACK - close loading screan if cancel button is clicked
-    setTimeout(() => {
-      if(fileInputRef.current.value) return;
-      cleanup();
-    }, 500);
   };
 
   return (
@@ -67,12 +51,11 @@ const SelfieUploadButton =  ({onSelfie}) => {
         capture="user"
         ref={fileInputRef}
         onChange={onImageUploadedHandler}
-        onClick={setOnBodyFocusHandler}
         style={{
           "display": "none"
         }}
       />
-      { isCropperMode && 
+      { rawImage && 
         <Cropper
           image={rawImage}
           onCrop={onCropHandler}
