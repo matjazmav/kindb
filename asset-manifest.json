@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kindb/static/css/main.424a2ab8.chunk.css",
-    "main.js": "/kindb/static/js/main.67fbfa69.chunk.js",
-    "main.js.map": "/kindb/static/js/main.67fbfa69.chunk.js.map",
+    "main.css": "/kindb/static/css/main.119beb04.chunk.css",
+    "main.js": "/kindb/static/js/main.8cdf99bd.chunk.js",
+    "main.js.map": "/kindb/static/js/main.8cdf99bd.chunk.js.map",
     "runtime-main.js": "/kindb/static/js/runtime-main.d56dbeee.js",
     "runtime-main.js.map": "/kindb/static/js/runtime-main.d56dbeee.js.map",
     "static/css/2.978b3dc9.chunk.css": "/kindb/static/css/2.978b3dc9.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.d922e2c6.chunk.js.map": "/kindb/static/js/3.d922e2c6.chunk.js.map",
     "index.html": "/kindb/index.html",
     "static/css/2.978b3dc9.chunk.css.map": "/kindb/static/css/2.978b3dc9.chunk.css.map",
-    "static/css/main.424a2ab8.chunk.css.map": "/kindb/static/css/main.424a2ab8.chunk.css.map",
+    "static/css/main.119beb04.chunk.css.map": "/kindb/static/css/main.119beb04.chunk.css.map",
     "static/js/2.c3ba1c0c.chunk.js.LICENSE.txt": "/kindb/static/js/2.c3ba1c0c.chunk.js.LICENSE.txt",
     "static/media/face-outline.d8b16a1f.svg": "/kindb/static/media/face-outline.d8b16a1f.svg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.d56dbeee.js",
     "static/css/2.978b3dc9.chunk.css",
     "static/js/2.c3ba1c0c.chunk.js",
-    "static/css/main.424a2ab8.chunk.css",
-    "static/js/main.67fbfa69.chunk.js"
+    "static/css/main.119beb04.chunk.css",
+    "static/js/main.8cdf99bd.chunk.js"
   ]
 }
