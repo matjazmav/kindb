@@ -1,0 +1,11 @@
+.workflow-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > button {
+    margin: 10px;
+    max-width: 300px;
+    width: 100%;
+  }
+} 

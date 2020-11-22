@@ -1,48 +1,29 @@
 import React from "react";
-import classNames from "classnames";
-import "./Contribute.css";
+import "./Contribute.scss";
 
 import Step1 from "./contribute/Step1";
 import Step2 from "./contribute/Step2";
 import Step3 from "./contribute/Step3";
-
-import {
-  Button
-} from 'react-bootstrap';
+import Step4 from "./contribute/Step4";
 
 const Contribute = () => {
   const [step, setStep] = React.useState(1);
 
-  const getStepClassNames = (i) => classNames({
-    "is-active text-primary": i === step,
-    "is-done text-success": i < step,
-    "is-done text-secondary": i > step,
-  });
+  const onFinishHandler = () => {
+    // TODO - Upload images
+    setStep(4);
+  };
 
   return (
     <section className="contribute">
-
-      {/* <div className="workflow-steps">
-        <span className={getStepClassNames(1)}>Step 1: Intro</span>
-        <span className={getStepClassNames(2)}>Step 2: Upload</span>
-        <span className={getStepClassNames(3)}>Step 3: Finish</span>
-      </div> */}
-
       {
         {
-          1: <Step1 />,
-          2: <Step2 />,
-          3: <Step3 />
+          1: <Step1 onNext={() => setStep(2)} />,
+          2: <Step2 onNext={() => setStep(3)} onBack={() => setStep(1)} />,
+          3: <Step3 onNext={onFinishHandler} onBack={() => setStep(2)} />,
+          4: <Step4 onNext={() => setStep(1)} />,
         }[step]
       }
-
-      <div className="workflow-buttons">
-        { step === 1 && <Button variant="outline-primary" onClick={() => setStep(2)}>Contribute</Button> }
-        { step > 1 && <Button variant="outline-secondary" onClick={() => setStep(step-1)}>Back</Button> }
-        { step === 2 && <Button variant="outline-primary" onClick={() => setStep(3)}>Next</Button> }
-        { step === 3 && <Button variant="outline-primary" onClick={() => setStep(4)}>Finish</Button> }
-      </div>
-
     </section>
   );
 }

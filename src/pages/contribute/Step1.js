@@ -1,4 +1,8 @@
-const Step1 = () => {
+import {
+  Button
+} from "react-bootstrap";
+
+const Step1 = ({onNext}) => {
   return (
     <section className="text-justify">
       <h2 className="text-center">Intro</h2>
@@ -20,6 +24,9 @@ const Step1 = () => {
         <li>Face is possioned directly to the camera</li>
         <li>Whole face is visible</li>
       </ul>
+      <div className="workflow-buttons">
+        <Button variant="outline-primary" onClick={onNext}>Contribute</Button>
+      </div>
     </section>
   );
 };
